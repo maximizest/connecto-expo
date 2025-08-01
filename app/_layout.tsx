@@ -11,6 +11,7 @@ import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import * as React from "react";
 import { Appearance, Platform } from "react-native";
+import { ToastProvider } from "react-native-toast-notifications";
 import { setAndroidNavigationBar } from "~/lib/android-navigation-bar";
 import { NAV_THEME } from "~/lib/constants";
 import { useColorScheme } from "~/lib/useColorScheme";
@@ -41,24 +42,26 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider value={isDarkColorScheme ? DARK_THEME : LIGHT_THEME}>
-      <StatusBar
-        style={isDarkColorScheme ? "light" : "dark"}
-        translucent={false}
-        backgroundColor={
-          isDarkColorScheme
-            ? NAV_THEME.dark.background
-            : NAV_THEME.light.background
-        }
-      />
-      <Stack>
-        <Stack.Screen
-          name="index"
-          options={{
-            headerShown: false,
-          }}
+      <ToastProvider>
+        <StatusBar
+          style={isDarkColorScheme ? "light" : "dark"}
+          translucent={false}
+          backgroundColor={
+            isDarkColorScheme
+              ? NAV_THEME.dark.background
+              : NAV_THEME.light.background
+          }
         />
-      </Stack>
-      <PortalHost />
+        <Stack>
+          <Stack.Screen
+            name="index"
+            options={{
+              headerShown: false,
+            }}
+          />
+        </Stack>
+        <PortalHost />
+      </ToastProvider>
     </ThemeProvider>
   );
 }
