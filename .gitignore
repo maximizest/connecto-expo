@@ -31,6 +31,9 @@ yarn-error.*
 # local env files
 .env*.local
 
+# MCP 설정 (민감한 API 키 포함)
+.mcp.json
+
 # typescript
 *.tsbuildinfo
 

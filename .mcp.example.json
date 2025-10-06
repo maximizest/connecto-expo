@@ -1,0 +1,52 @@
+{
+  "mcpServers": {
+    "Framelink Figma MCP": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "figma-developer-mcp",
+        "--figma-api-key=${FIGMA_API_KEY}",
+        "--stdio"
+      ],
+      "env": {
+        "FIGMA_API_KEY": "${FIGMA_API_KEY}"
+      }
+    },
+    "executeautomation-playwright-server": {
+      "command": "npx",
+      "args": ["-y", "@executeautomation/playwright-mcp-server"]
+    },
+    "playwright-server": {
+      "command": "npx",
+      "args": ["@playwright/mcp@latest"]
+    },
+    "DeepGraph Next.js MCP": {
+      "command": "npx",
+      "args": ["-y", "mcp-code-graph@latest", "vercel/next.js"]
+    },
+    "DeepGraph React MCP": {
+      "command": "npx",
+      "args": ["-y", "mcp-code-graph@latest", "facebook/react"]
+    },
+    "DeepGraph TypeScript MCP": {
+      "command": "npx",
+      "args": ["-y", "mcp-code-graph@latest", "microsoft/TypeScript"]
+    },
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp"]
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/path/to/allowed/files"
+      ]
+    },
+    "memory": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory"]
+    }
+  }
+}
