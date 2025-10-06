@@ -4,46 +4,98 @@
 
 @layer base {
   :root {
+    /* ========================================
+       Base Colors
+       ======================================== */
+    --base-white: 0 0% 100%;
+    --base-black: 0 0% 0%;
+    --base-red: 359 85% 59%;
+
+    /* ========================================
+       Purple Scale
+       ======================================== */
+    --purple-25: 240 100% 99%;
+    --purple-50: 245 100% 97%;
+    --purple-100: 246 95% 95%;
+    --purple-200: 245 92% 91%;
+    --purple-300: 245 94% 85%;
+    --purple-400: 249 93% 76%;
+    --purple-500: 252 92% 66%;
+    --purple-600: 254 85% 57%;
+    --purple-700: 255 78% 51%;
+    --purple-800: 256 71% 43%;
+    --purple-900: 258 69% 35%;
+    --purple-950: 258 70% 22%;
+
+    /* ========================================
+       Yellow Scale
+       ======================================== */
+    --yellow-25: 54 75% 97%;
+    --yellow-50: 55 92% 95%;
+    --yellow-100: 51 98% 89%;
+    --yellow-200: 51 99% 79%;
+    --yellow-300: 50 97% 71%;
+    --yellow-400: 45 95% 53%;
+    --yellow-500: 43 94% 47%;
+    --yellow-600: 38 97% 40%;
+    --yellow-700: 32 93% 33%;
+    --yellow-800: 31 89% 29%;
+    --yellow-900: 30 74% 26%;
+    --yellow-950: 29 78% 19%;
+
+    /* ========================================
+       Success (Green) Scale
+       ======================================== */
+    --success-50: 151 88% 95%;
+    --success-200: 149 75% 80%;
+    --success-700: 158 95% 24%;
+
+    /* ========================================
+       Semantic Colors (기존 호환성 유지)
+       ======================================== */
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 252 92% 66%; /* purple-500 */
+    --primary-foreground: 0 0% 100%;
     --secondary: 240 4.8% 95.9%;
     --secondary-foreground: 240 5.9% 10%;
     --muted: 240 4.8% 95.9%;
     --muted-foreground: 240 3.8% 46.1%;
     --accent: 240 4.8% 95.9%;
     --accent-foreground: 240 5.9% 10%;
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 359 85% 59%; /* base-red */
     --destructive-foreground: 0 0% 98%;
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
-    --ring: 240 5.9% 10%;
+    --ring: 252 92% 66%; /* purple-500 */
   }
 
   .dark:root {
+    /* ========================================
+       Semantic Colors (Dark Mode)
+       ======================================== */
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
     --card: 240 10% 3.9%;
     --card-foreground: 0 0% 98%;
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
+    --primary: 252 92% 66%; /* purple-500 */
+    --primary-foreground: 0 0% 100%;
     --secondary: 240 3.7% 15.9%;
     --secondary-foreground: 0 0% 98%;
     --muted: 240 3.7% 15.9%;
     --muted-foreground: 240 5% 64.9%;
     --accent: 240 3.7% 15.9%;
     --accent-foreground: 0 0% 98%;
-    --destructive: 0 72% 51%;
+    --destructive: 359 85% 59%; /* base-red */
     --destructive-foreground: 0 0% 98%;
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
+    --ring: 252 92% 66%; /* purple-500 */
   }
 }

@@ -8,6 +8,49 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        // 기본 색상
+        base: {
+          white: 'hsl(var(--base-white))',
+          black: 'hsl(var(--base-black))',
+          red: 'hsl(var(--base-red))',
+        },
+        // Purple 스케일
+        purple: {
+          25: 'hsl(var(--purple-25))',
+          50: 'hsl(var(--purple-50))',
+          100: 'hsl(var(--purple-100))',
+          200: 'hsl(var(--purple-200))',
+          300: 'hsl(var(--purple-300))',
+          400: 'hsl(var(--purple-400))',
+          500: 'hsl(var(--purple-500))',
+          600: 'hsl(var(--purple-600))',
+          700: 'hsl(var(--purple-700))',
+          800: 'hsl(var(--purple-800))',
+          900: 'hsl(var(--purple-900))',
+          950: 'hsl(var(--purple-950))',
+        },
+        // Yellow 스케일
+        yellow: {
+          25: 'hsl(var(--yellow-25))',
+          50: 'hsl(var(--yellow-50))',
+          100: 'hsl(var(--yellow-100))',
+          200: 'hsl(var(--yellow-200))',
+          300: 'hsl(var(--yellow-300))',
+          400: 'hsl(var(--yellow-400))',
+          500: 'hsl(var(--yellow-500))',
+          600: 'hsl(var(--yellow-600))',
+          700: 'hsl(var(--yellow-700))',
+          800: 'hsl(var(--yellow-800))',
+          900: 'hsl(var(--yellow-900))',
+          950: 'hsl(var(--yellow-950))',
+        },
+        // Success (Green) 스케일
+        success: {
+          50: 'hsl(var(--success-50))',
+          200: 'hsl(var(--success-200))',
+          700: 'hsl(var(--success-700))',
+        },
+        // Semantic 색상 (기존 호환성 유지)
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',

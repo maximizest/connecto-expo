@@ -161,6 +161,84 @@ if (isValidationError(error)) {
 - **다크모드**: `useColorScheme()` 훅으로 현재 테마 확인
 - **플랫폼 대응**: `Platform.select()` 사용 (`app/_layout.tsx:33-37` 참조)
 
+#### Color 디자인 시스템
+Figma 디자인 시스템 기반의 색상 팔레트 구현 (`global.css`, `tailwind.config.js`)
+
+**Base Colors**:
+```typescript
+bg-base-white      // #FFFFFF
+bg-base-black      // #000000
+bg-base-red        // #F03F40 (Error)
+```
+
+**Purple Scale** (Primary):
+```typescript
+bg-purple-25       // #FAFAFF (lightest)
+bg-purple-50       // #F4F3FF
+bg-purple-100      // #EBE9FE
+bg-purple-200      // #D9D6FE
+bg-purple-300      // #BDB4FE
+bg-purple-400      // #9B8AFB
+bg-purple-500      // #7A5AF8 (Primary, WCAG AA)
+bg-purple-600      // #6938EF
+bg-purple-700      // #5925DC (WCAG AAA)
+bg-purple-800      // #4A1FB8
+bg-purple-900      // #3E1C96
+bg-purple-950      // #27115F (darkest)
+```
+
+**Yellow Scale** (Warning):
+```typescript
+bg-yellow-25       // #FEFDF0 (lightest)
+bg-yellow-50       // #FEFBE8
+bg-yellow-100      // #FEF7C3
+bg-yellow-200      // #FEEE95
+bg-yellow-300      // #FDE272
+bg-yellow-400      // #FAC515
+bg-yellow-500      // #EAAA08 (Primary)
+bg-yellow-600      // #CA8504
+bg-yellow-700      // #A15C07 (WCAG AA)
+bg-yellow-800      // #854A0E
+bg-yellow-900      // #713B12
+bg-yellow-950      // #542C0D (darkest)
+```
+
+**Success (Green) Scale**:
+```typescript
+bg-success-50      // #ECFDF3
+bg-success-200     // #ABEFC6
+bg-success-700     // #067647 (WCAG AAA)
+```
+
+**사용 예시**:
+```tsx
+// 기본 색상
+<View className="bg-purple-500 text-base-white">
+  <Text>Primary Button</Text>
+</View>
+
+// 그라데이션 및 상태 변화
+<Pressable className="bg-yellow-500 hover:bg-yellow-600 active:bg-yellow-700">
+  <Text className="text-base-black">Warning</Text>
+</Pressable>
+
+// Success 상태
+<View className="border border-success-700 bg-success-50">
+  <Text className="text-success-700">Success Message</Text>
+</View>
+
+// CSS 변수로 직접 접근 (고급)
+<View style={{ backgroundColor: 'hsl(var(--purple-500))' }}>
+  <Text>Custom Style</Text>
+</View>
+```
+
+**접근성 (WCAG Contrast Ratios)**:
+- `purple-500`: AA 4.53:1 (흰색 텍스트)
+- `purple-700`: AAA 7.71:1 (흰색 텍스트)
+- `yellow-700`: AA 5.20:1 (흰색 텍스트)
+- `success-700`: AAA (흰색 텍스트)
+
 ### Path Alias
 - `@/*`: 프로젝트 루트 경로
 - `~/*`: 프로젝트 루트 경로 (동일)
