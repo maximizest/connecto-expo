@@ -239,6 +239,101 @@ bg-success-700     // #067647 (WCAG AAA)
 - `yellow-700`: AA 5.20:1 (흰색 텍스트)
 - `success-700`: AAA (흰색 텍스트)
 
+#### Typography 디자인 시스템
+Figma 디자인 시스템 기반의 타이포그래피 스케일 구현 (`tailwind.config.js`)
+
+**폰트 패밀리**:
+- **Primary**: 학교안심둥근미소 (한글 전용 폰트)
+- **Secondary**: Inter (영문/숫자 폰트, 시스템 폰트)
+
+**텍스트 스케일** (모든 텍스트: lineHeight 120%, letterSpacing -3%):
+```typescript
+// Heading
+text-heading-1     // 24px (H1)
+
+// Body Text
+text-text-xl       // 20px
+text-text-lg       // 16px
+text-text-md       // 14px (기본 본문)
+text-text-sm       // 12px
+text-text-xs       // 10px (최소 크기)
+```
+
+**폰트 로드 방법**:
+1. **학교안심둥근미소 폰트 다운로드**:
+   - [다운로드 링크](https://www.hakgyoansim.com/)에서 OTF/TTF 파일 다운로드
+
+2. **프로젝트에 폰트 추가**:
+   ```bash
+   # assets 디렉토리 생성
+   mkdir -p assets/fonts
+
+   # 폰트 파일 복사
+   # Hakgyoansim-Dunggeunmiso-OTF.otf → assets/fonts/
+   ```
+
+3. **expo-font 설치** (필요시):
+   ```bash
+   yarn add expo-font
+   ```
+
+4. **app/_layout.tsx에서 폰트 로드**:
+   ```tsx
+   import { useFonts } from 'expo-font';
+   import * as SplashScreen from 'expo-splash-screen';
+
+   SplashScreen.preventAutoHideAsync();
+
+   export default function RootLayout() {
+     const [fontsLoaded] = useFonts({
+       'Hakgyoansim-Dunggeunmiso': require('@/assets/fonts/Hakgyoansim-Dunggeunmiso-OTF.otf'),
+     });
+
+     useEffect(() => {
+       if (fontsLoaded) {
+         SplashScreen.hideAsync();
+       }
+     }, [fontsLoaded]);
+
+     if (!fontsLoaded) return null;
+
+     return (/* ... */);
+   }
+   ```
+
+**사용 예시**:
+```tsx
+// Heading
+<Text className="text-heading-1 font-primary text-gray-900">
+  제목입니다
+</Text>
+
+// Body Text (기본)
+<Text className="text-text-md font-primary text-gray-600">
+  본문 텍스트입니다
+</Text>
+
+// Small Text
+<Text className="text-text-sm font-primary text-gray-500">
+  작은 텍스트입니다
+</Text>
+
+// 영문/숫자 (Inter 폰트)
+<Text className="text-text-lg font-secondary text-gray-900">
+  English Text 123
+</Text>
+
+// 커스텀 조합
+<Text className="text-text-xl font-primary text-purple-700">
+  강조된 제목
+</Text>
+```
+
+**폰트 미설치 시 동작**:
+- `font-primary`는 시스템 sans-serif 폰트로 fallback
+- `font-secondary`는 Inter 시스템 폰트 사용
+- 타이포그래피 스케일은 폰트 없이도 정상 작동
+
 ### Path Alias
 - `@/*`: 프로젝트 루트 경로
 - `~/*`: 프로젝트 루트 경로 (동일)

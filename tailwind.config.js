@@ -7,6 +7,22 @@ module.exports = {
   presets: [require('nativewind/preset')],
   theme: {
     extend: {
+      fontFamily: {
+        // 한글 폰트: 학교안심둥근미소 (assets/fonts/에 추가 필요)
+        // 영문 폰트: Inter (시스템 폰트)
+        primary: ['Hakgyoansim-Dunggeunmiso', 'sans-serif'],
+        secondary: ['Inter', 'sans-serif'],
+      },
+      fontSize: {
+        // Figma 디자인 시스템 기반 타이포그래피 스케일
+        // [fontSize, { lineHeight, letterSpacing }]
+        'heading-1': ['24px', { lineHeight: '120%', letterSpacing: '-0.03em' }],
+        'text-xl': ['20px', { lineHeight: '120%', letterSpacing: '-0.03em' }],
+        'text-lg': ['16px', { lineHeight: '120%', letterSpacing: '-0.03em' }],
+        'text-md': ['14px', { lineHeight: '120%', letterSpacing: '-0.03em' }],
+        'text-sm': ['12px', { lineHeight: '120%', letterSpacing: '-0.03em' }],
+        'text-xs': ['10px', { lineHeight: '120%', letterSpacing: '-0.03em' }],
+      },
       colors: {
         // 기본 색상
         base: {
